@@ -1,0 +1,94 @@
+Unit 5 HackMD information:
+
+Trivia Master
+
+Table of Contents
+1.Overview
+2.Product Spec
+3.Wireframes
+4.Schema
+
+Overview
+
+Description
+Trivia Master is an interactive trivia app that fetches dynamic questions from the Open Trivia Database. Users can test their knowledge across various categories and difficulties, choosing their preferences for number of questions, question type, and difficulty level. The app provides an engaging experience with responsive UI and scoring functionality.
+
+App Evaluation
+
+Category: Entertainment/Education
+Mobile: Yes, exclusively for iOS.
+Story: Offers users an opportunity to challenge themselves with trivia questions, learn new facts, and compete against the clock or themselves.
+Market: Trivia enthusiasts, students, or anyone interested in learning in a gamified way.
+Habit: Occasional use—ideal for casual gaming or knowledge improvement sessions.
+Scope: Medium in scope, focusing on trivia but with a potential for extended features like global leaderboards or custom quizzes.
+
+Product Spec
+
+1. User Stories (Required and Optional)
+Required Must-have Stories
+
+Users can modify trivia game settings, including number of questions, category, difficulty, and type.
+Users can start a trivia game with the selected settings.
+Questions and answers are dynamically fetched via an API.
+Users can select answers for each question, which are highlighted but not immediately marked.
+Users can submit their answers and view a final score.
+Optional Nice-to-have Stories
+
+Users receive immediate feedback (correct/incorrect) upon submitting their answers.
+A timer creates urgency for each quiz.
+Leaderboards for high scores among users.
+Users can save favorite trivia categories or create custom quizzes.
+
+2. Screen Archetypes
+Options Screen
+
+User can select game settings (number of questions, category, difficulty, type).
+A "Start Game" button initiates the trivia session.
+Trivia Question Screen
+
+Displays trivia questions with possible answers in a List or Card view.
+Users can select and mark answers.
+Results Screen
+
+Shows the user's final score after submission.
+Option to review correct and incorrect answers.
+Profile Screen (Stretch)
+
+Displays user stats, including total quizzes taken and average scores.
+Includes a settings menu for preferences.
+
+3. Navigation
+Tab Navigation (Tab to Screen)
+
+Home (Options Screen)
+Trivia Game
+Results
+Flow Navigation (Screen to Screen)
+
+Options Screen -> Trivia Question Screen
+Trivia Question Screen -> Results Screen
+Results Screen -> Options Screen
+
+Wireframes
+Wireframe Sketches
+
+
+
+
+
+Schema
+Models
+Model: Question
+
+Property	Type	Description
+id	String	Unique ID for each question
+questionText	String	The text of the trivia question
+category	String	Category of the trivia question
+difficulty	String	Difficulty level (easy, medium, hard)
+correctAnswer	String	The correct answer
+incorrectAnswers	[String]	Array of incorrect answers
+Networking
+List of API Endpoints
+
+HTTP Method	Endpoint	Description
+GET	/api.php?amount={num}&category={cat}&difficulty={diff}&type={type}	Fetch trivia questions based on user preferences.
